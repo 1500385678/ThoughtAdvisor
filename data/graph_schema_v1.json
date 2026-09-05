@@ -1,0 +1,108 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-09-06",
+  "source": "Phase 0 任务 4 · 思想图谱 schema 冻结(0902 兜底 P3 建议 0903 必启,延至 0906)",
+  "status": "frozen",
+  "alignment": {
+    "topics_index": "data/topics_index.json v1.0(2026-08-26)",
+    "thinkers_v1": "data/thinkers_v1.json v1.0(2026-08-29)",
+    "classics_v1": "data/classics_v1.json v1.0(2026-09-02)"
+  },
+  "nodes": {
+    "thinker": {
+      "label": "思想家",
+      "id_pattern": "T<两位数> 例:T01 毛泽东",
+      "fields": ["id", "name_cn", "name_en", "birth_year", "death_year", "topic_id", "school", "brief", "one_liner", "key_works[classic_ids]", "representative_quotes[]", "source_path"],
+      "soft_link": "topic_id 关联 topics_index.id;key_works[classic_ids] 关联 classics_v1.id",
+      "source": "data/thinkers_v1.json v1.0 已含 13 人物(T01-T13)"
+    },
+    "school": {
+      "label": "学派/流派",
+      "id_pattern": "S<两位数> 例:S01 心学",
+      "fields": ["id", "name_cn", "name_en", "topic_id", "founder_ids[thinker_ids]", "core_ideas[]", "era", "brief", "source_path"],
+      "soft_link": "topic_id 关联 topics_index.id;founder_ids 关联 thinkers_v1.id",
+      "source": "本任务不直接产 school 节点库(Phase 0 任务 5 待启),先冻结 schema"
+    },
+    "classic": {
+      "label": "经典文本",
+      "id_pattern": "C<两位数> 例:C01 矛盾论",
+      "fields": ["id", "title_cn", "title_en", "author_ids[thinker_ids]", "era", "school", "topic_id", "brief", "one_liner", "representative_chapters[]", "source_path"],
+      "soft_link": "author_ids 关联 thinkers_v1.id;topic_id 关联 topics_index.id",
+      "source": "data/classics_v1.json v1.0 已含 10 经典(C01-C10)"
+    },
+    "idea": {
+      "label": "核心命题/思想",
+      "id_pattern": "I<两位数> 例:I01 知行合一",
+      "fields": ["id", "name", "topic_id", "proposer_ids[thinker_ids]", "classic_ids[classic_ids]", "school_ids[school_ids]", "one_liner", "keywords[]", "counter_idea_ids[]"],
+      "soft_link": "proposer_ids/classic_ids/school_ids 软关联三者;counter_idea_ids 反对命题对偶",
+      "source": "本任务不直接产 idea 节点库(Phase 0 任务 5/6 待启),先冻结 schema"
+    },
+    "era": {
+      "label": "时代/时期",
+      "id_pattern": "E<两位数> 例:E01 先秦诸子",
+      "fields": ["id", "name", "start_year", "end_year", "topic_ids[topic_ids]", "representative_thinker_ids[thinker_ids]", "brief"],
+      "soft_link": "topic_ids 关联 topics_index.id;representative_thinker_ids 关联 thinkers_v1.id",
+      "source": "本任务不直接产 era 节点库(Phase 0 任务 5 待启),先冻结 schema"
+    }
+  },
+  "edges": {
+    "belongs_to": {
+      "label": "归属于",
+      "from": ["thinker", "classic", "idea"],
+      "to": ["school", "topic", "era"],
+      "fields": ["weight(0-1)", "primary(bool 是否主归属)"],
+      "example": "T03 王阳明 -[belongs_to]-> S01 心学(weight=1.0, primary=true)"
+    },
+    "wrote": {
+      "label": "著有/撰写",
+      "from": ["thinker"],
+      "to": ["classic"],
+      "fields": ["role(author/editor/co-author)", "year"],
+      "example": "T01 毛泽东 -[wrote]-> C01 矛盾论(role=author, year=1937)"
+    },
+    "influenced": {
+      "label": "影响",
+      "from": ["thinker", "classic", "idea", "school"],
+      "to": ["thinker", "classic", "idea", "school"],
+      "fields": ["weight(0-1)", "direction(direct/indirect)", "note"],
+      "example": "T03 王阳明 -[influenced]-> T04(略) (留 Phase 0 任务 5 填)"
+    },
+    "criticized": {
+      "label": "批评/反驳",
+      "from": ["thinker", "classic", "idea"],
+      "to": ["thinker", "classic", "idea", "school"],
+      "fields": ["weight(0-1)", "stance(refute/revise/extend)", "note"],
+      "example": "T01 毛泽东 -[criticized]-> 教条主义(stance=refute);T07 庄子 -[criticized]-> 儒家礼教(stance=refute)"
+    },
+    "contemporary_with": {
+      "label": "同时代",
+      "from": ["thinker"],
+      "to": ["thinker"],
+      "fields": ["era_overlap_years", "geography(same/cross-region)"],
+      "example": "T07 庄子 -[contemporary_with]-> T(略) 惠子(era_overlap_years≈30, geography=same)"
+    },
+    "branch_of": {
+      "label": "分支自/师承",
+      "from": ["school", "thinker"],
+      "to": ["school", "thinker"],
+      "fields": ["relation(master/apprentice/branch)", "year"],
+      "example": "陆王心学 -[branch_of]-> 理学(relation=branch);S01 心学 -[branch_of]-> 理学(relation=revise)"
+    }
+  },
+  "soft_link_convention": {
+    "rule": "节点之间通过 id 字符串软关联,不强外键,便于单独迭代单个数据文件",
+    "validator": "Phase 1 MVP 时再起 Neo4j 时做硬外键 + 双向索引(本任务不实施)",
+    "field_naming": "所有 *_ids 字段统一为 thinker_ids / classic_ids / school_ids / idea_ids / era_ids / topic_ids 数组"
+  },
+  "expansion_plan": [
+    "Phase 0 任务 5:启动 school/idea/era 三个节点库(本任务仅冻结 schema,不填实例)",
+    "Phase 0 任务 6:启动 influenced/criticized/contemporary_with 三类边实例(0902 兜底 P2 建议)",
+    "Phase 1 MVP:Neo4j 硬外键迁移 + 双向索引,本 schema 字段保持不变(只做实体化)"
+  ],
+  "not_doing": [
+    "不填任何节点/边的实例数据(本任务仅冻结 schema,实例归 Phase 0 任务 5/6)",
+    "不动 topics_index.json / thinkers_v1.json / classics_v1.json(沿 0902 原则,只冻结 schema 不动现有数据)",
+    "不实施 Neo4j 硬外键(Phase 1 MVP 范围)",
+    "不勾选 项目开发计划.md 任务 4 checkbox(实例未填,沿 0826 原则整体收尾时统一勾选)"
+  ]
+}
