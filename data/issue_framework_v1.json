@@ -1,0 +1,110 @@
+{
+  "schema_version": "1.0",
+  "generated": "2026-09-08",
+  "phase": "Phase 0 任务 5",
+  "source_baseline": [
+    "data/topics_index.json v1.0",
+    "data/thinkers_v1.json v1.0",
+    "data/classics_v1.json v1.0",
+    "data/graph_schema_v1.json v1.0"
+  ],
+  "extension_plan": "3/50 起步,沿 D+1 节奏每日 1-2 议题扩展至 50,目标 0913 Phase 0 截止日前后达成 30+ 议题覆盖 10 主题",
+  "issues": [
+    {
+      "issue_id": "I01",
+      "question_cn": "知与行,孰先孰后?",
+      "question_en": "Which comes first: knowledge or action?",
+      "topic_ids": [
+        "03",
+        "01"
+      ],
+      "category": "认识论",
+      "one_liner": "心学主张知行合一不可分,实践论主张行先知后、行再促知",
+      "positions": [
+        {
+          "thinker_id": "T03",
+          "school": "心学",
+          "stance": "知行合一",
+          "one_liner": "知是行之始,行是知之成;知而不行,即未知",
+          "key_quote": "知是行的主意,行是知的功夫;知而不行,只是未知",
+          "classic_ids": [
+            "C03"
+          ]
+        },
+        {
+          "thinker_id": "T01",
+          "school": "马克思主义中国化 / 实践论",
+          "stance": "行先知后 / 知行循环",
+          "one_liner": "实践是认识的来源、动力、目的与检验标准;认识反作用于实践",
+          "key_quote": "通过实践而发现真理,又通过实践而证实真理和发展真理",
+          "classic_ids": [
+            "C02"
+          ]
+        }
+      ]
+    },
+    {
+      "issue_id": "I02",
+      "question_cn": "改革应当解放思想还是坚持实事求是?",
+      "question_en": "Should reform liberate thought or adhere to seeking truth from facts?",
+      "topic_ids": [
+        "02",
+        "01"
+      ],
+      "category": "方法论",
+      "one_liner": "解放思想是实事求是的先导,实事求是是解放思想的落点",
+      "positions": [
+        {
+          "thinker_id": "T02",
+          "school": "改革开放 / 务实主义",
+          "stance": "解放思想先行",
+          "one_liner": "思想不解放,脑筋不开动,进一步的改革开放就迈不开步子",
+          "key_quote": "解放思想,开动脑筋,实事求是",
+          "classic_ids": []
+        },
+        {
+          "thinker_id": "T01",
+          "school": "马克思主义中国化 / 矛盾论",
+          "stance": "实事求是是根本",
+          "one_liner": "'实事'就是客观存在的一切事物,'是'就是客观事物的内部联系",
+          "key_quote": "'实事'就是客观存在着的一切事物,'是'就是客观事物的内部联系,即规律性",
+          "classic_ids": [
+            "C01",
+            "C02"
+          ]
+        }
+      ]
+    },
+    {
+      "issue_id": "I03",
+      "question_cn": "处世应兼爱济世还是逍遥超脱?",
+      "question_en": "Should one embrace universal love or transcend worldly concerns?",
+      "topic_ids": [
+        "06",
+        "07"
+      ],
+      "category": "价值观",
+      "one_liner": "墨家以兼爱非攻入世救世,道家以逍遥齐物超脱世俗",
+      "positions": [
+        {
+          "thinker_id": "T06",
+          "school": "墨家",
+          "stance": "兼爱非攻 / 积极入世",
+          "one_liner": "兼相爱则无差等,交相利则无争夺;反对侵略战争,主张尚贤尚同",
+          "key_quote": "兼相爱,交相利",
+          "classic_ids": []
+        },
+        {
+          "thinker_id": "T07",
+          "school": "道家",
+          "stance": "逍遥无为 / 超脱世俗",
+          "one_liner": "至人无己,神人无功,圣人无名;乘天地之正以游无穷",
+          "key_quote": "若夫乘天地之正,而御六气之辩,以游无穷者,彼且恶乎待哉",
+          "classic_ids": [
+            "C06"
+          ]
+        }
+      ]
+    }
+  ]
+}
