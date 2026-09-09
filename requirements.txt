@@ -1,0 +1,6 @@
+# ThoughtAdvisor · 思想顾问 · Phase 1 MVP 起步依赖
+# T5 兜底 2026-09-10 · 仅 3 项起步,够 hello world + 路由骨架
+
+fastapi==0.115.0
+uvicorn[standard]==0.32.0
+pydantic==2.9.2
