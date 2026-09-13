@@ -39,7 +39,7 @@ open http://127.0.0.1:8006/
 |------|------|------|
 | `topics_index.json` | 10 大主题索引 | ✅ 100% |
 | `thinkers_v1.json` | 思想家种子 | 🟡 13/100 |
-| `classics_v1.json` | 经典种子 | 🟡 12/50 |
+| `classics_v1.json` | 经典种子 | 🟡 18/50 |
 | `graph_schema_v1.json` | 思想图谱 schema | 🟡 5 节点 + 6 关系 |
 | `issue_framework_v1.json` | 议题梳理框架 | 🟡 3/50 |
 
