@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
-  "generated": "2026-09-08",
+  "generated": "2026-09-17",
   "phase": "Phase 0 任务 5",
   "source_baseline": [
     "data/topics_index.json v1.0",
-    "data/thinkers_v1.json v1.0",
-    "data/classics_v1.json v1.0",
+    "data/thinkers_v1.json v1.1",
+    "data/classics_v1.json v1.5",
     "data/graph_schema_v1.json v1.0"
   ],
-  "extension_plan": "3/50 起步,沿 D+1 节奏每日 1-2 议题扩展至 50,目标 0913 Phase 0 截止日前后达成 30+ 议题覆盖 10 主题",
+  "extension_plan": "v1.0 3/50 → v1.1 4/50,沿 0908 plan extension_plan D+1 节奏 + 0916 plan 后续建议 3,本次 v1.1 仅做 I04 1 条最小子集(留 I05 待 0918+ Phase 0 任务 2 续启动时统一处理)",
   "issues": [
     {
       "issue_id": "I01",
@@ -102,6 +102,39 @@
           "key_quote": "若夫乘天地之正,而御六气之辩,以游无穷者,彼且恶乎待哉",
           "classic_ids": [
             "C06"
+          ]
+        }
+      ]
+    },
+    {
+      "issue_id": "I04",
+      "question_cn": "个人意志与历史必然,孰为根本?",
+      "question_en": "Which is fundamental: individual will or historical necessity?",
+      "topic_ids": [
+        "10",
+        "09"
+      ],
+      "category": "政治哲学",
+      "one_liner": "历史唯物主义主张经济基础决定上层建筑、历史有客观规律;新民说强调人力可以塑造历史,国民性改造以人力塑造历史",
+      "positions": [
+        {
+          "thinker_id": "T13",
+          "school": "马克思主义 / 历史唯物主义",
+          "stance": "历史必然性",
+          "one_liner": "生产力决定生产关系,经济基础决定上层建筑;历史有客观规律,人能认识利用规律但不能创造规律",
+          "key_quote": "人们自己创造自己的历史,但是他们并不是随心所欲地创造,并不是在他们自己选定的条件下创造,而是在直接碰到的、既定的、从过去承继下来的条件下创造",
+          "classic_ids": [
+            "C16"
+          ]
+        },
+        {
+          "thinker_id": "T10",
+          "school": "近代启蒙 / 维新变法",
+          "stance": "新民说能动论",
+          "one_liner": "'新民为今日中国第一急务',国民性改造以人力塑造历史,从公德 / 国家思想 / 自由 / 自治 / 进步 / 进取 / 合群 / 义务等 18 维度重塑近代国民",
+          "key_quote": "新民为今日中国第一急务",
+          "classic_ids": [
+            "C08"
           ]
         }
       ]
