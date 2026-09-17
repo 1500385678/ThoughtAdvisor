@@ -38,7 +38,7 @@ open http://127.0.0.1:8006/
 | 文件 | 内容 | 进度 |
 |------|------|------|
 | `topics_index.json` | 10 大主题索引 | ✅ 100% |
-| `thinkers_v1.json` | 思想家种子 | 🟡 14/100 |
+| `thinkers_v1.json` | 思想家种子 | 🟡 15/100 |
 | `classics_v1.json` | 经典种子 | 🟡 19/50 |
 | `graph_schema_v1.json` | 思想图谱 schema | 🟡 5 节点 + 6 关系 |
 | `issue_framework_v1.json` | 议题梳理框架 | 🟡 4/50 |
