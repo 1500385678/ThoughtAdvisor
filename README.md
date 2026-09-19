@@ -41,7 +41,7 @@ open http://127.0.0.1:8006/
 | `thinkers_v1.json` | 思想家种子 | 🟡 16/100 |
 | `classics_v1.json` | 经典种子 | 🟡 19/50 |
 | `graph_schema_v1.json` | 思想图谱 schema | 🟡 5 节点 + 6 关系 |
-| `issue_framework_v1.json` | 议题梳理框架 | 🟡 4/50 |
+| `issue_framework_v1.json` | 议题梳理框架 | 🟡 5/50 |
 
 ## 同步
 - GitHub: https://github.com/1500385678/ThoughtAdvisor

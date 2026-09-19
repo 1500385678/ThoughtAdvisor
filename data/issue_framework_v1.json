@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
-  "generated": "2026-09-17",
+  "generated": "2026-09-20",
   "phase": "Phase 0 任务 5",
   "source_baseline": [
     "data/topics_index.json v1.0",
-    "data/thinkers_v1.json v1.1",
+    "data/thinkers_v1.json v1.3",
     "data/classics_v1.json v1.5",
     "data/graph_schema_v1.json v1.0"
   ],
-  "extension_plan": "v1.0 3/50 → v1.1 4/50,沿 0908 plan extension_plan D+1 节奏 + 0916 plan 后续建议 3,本次 v1.1 仅做 I04 1 条最小子集(留 I05 待 0918+ Phase 0 任务 2 续启动时统一处理)",
+  "extension_plan": "v1.1 4/50 → v1.2 5/50,沿 0917 plan 后续建议 3 + issue_framework_v1.md extension_plan D+10 节奏,本次 v1.2 选 I05 老庄异同(主题 07 道家内部张力,双立场走 T07 庄子 + T14 老子李耳已入机)1 条最小子集;沿 0918 / 0919 T5 兜底 thinkers 续延后 2 天,本次兑现议题续;不勾选项目开发计划任务 5 checkbox(5/50 未达验收,沿 0826 原则);category 枚举沿 v1.1 设计原则'7 形态预留位'扩展新增'本体论'形态",
   "issues": [
     {
       "issue_id": "I01",
@@ -135,6 +135,38 @@
           "key_quote": "新民为今日中国第一急务",
           "classic_ids": [
             "C08"
+          ]
+        }
+      ]
+    },
+    {
+      "issue_id": "I05",
+      "question_cn": "道家的'自然'与'逍遥',是同一种自由吗?",
+      "question_en": "Are Daoist 'ziran (nature)' and 'xiaoyao (free wandering)' the same kind of freedom?",
+      "topic_ids": [
+        "07"
+      ],
+      "category": "本体论",
+      "one_liner": "老子以'道法自然'讲治国与天地之道,庄子以'逍遥齐物'讲个体精神超越;老子重心性修养与治国之道,庄子重个体精神自由,二人对'自由'的层次与对象不同",
+      "positions": [
+        {
+          "thinker_id": "T14",
+          "school": "道家 / 道家学派创始人",
+          "stance": "道法自然 / 无为而无不为",
+          "one_liner": "'道'是宇宙本原与运行规律,'无为而无不为'是不强行干预则万物自化,'治大国若烹小鲜'是治理的最高境界是不折腾;自由在'道法自然'的政治治理中——君王无为则百姓自化",
+          "key_quote": "人法地,地法天,天法道,道法自然",
+          "classic_ids": [
+            "C19"
+          ]
+        },
+        {
+          "thinker_id": "T07",
+          "school": "道家",
+          "stance": "逍遥齐物 / 个体精神超脱",
+          "one_liner": "内圣外王中'内圣'为主,'至人无己,神人无功,圣人无名'是精神自由的极致,'齐物'消解万物差别;自由在'乘天地之正以游无穷'的个人精神层面——超脱世俗、逍遥于天地之间",
+          "key_quote": "若夫乘天地之正,而御六气之辩,以游无穷者,彼且恶乎待哉",
+          "classic_ids": [
+            "C06"
           ]
         }
       ]
